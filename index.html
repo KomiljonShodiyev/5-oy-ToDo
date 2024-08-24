@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo List</title>
     <link rel="stylesheet" href="./css/main.css">
+    <title>Todo List</title>
 </head>
 <body>
-    <div class="todo-container">
-        <h1>ToDo List 📋</h1>
-        <form id="todo-form">
-            <input type="text" id="todo-input" placeholder="Add your task">
-            <button type="submit">+</button>
+    <div class="container">
+        <h1 class="title">ToDo List</h1>
+        <form class="todo-form">
+            <input type="text" class="todo-input" placeholder="Add your todo">
+            <button class="add-btn">Add</button>
+            <label class="img-label">
+                <input type="file" class="img-input hidden">
+                <img class="img-icon" src="./images/upload-img.svg" alt="Add Image">
+            </label>
         </form>
+
         <div class="filter-buttons">
-            <button id="all-btn">All</button>
-            <button id="completed-btn">Completed</button>
-            <button id="uncompleted-btn">Uncompleted</button>
+            <button class="filter-btn" id="all-btn">All (<span id="all-count">0</span>)</button>
+            <button class="filter-btn" id="completed-btn">Completed (<span id="completed-count">0</span>)</button>
+            <button class="filter-btn" id="uncompleted-btn">Uncompleted (<span id="uncompleted-count">0</span>)</button>
         </div>
-        <ul class="todo-list" id="todo-list"></ul>
+
+        <ul class="todo-list"></ul>
+
+        <div class="modal-wrapper" id="modal-wrapper">
+            <div class="modal">
+                <input type="text" class="modal-input">
+                <label class="modal-img-label">
+                    <input type="file" class="modal-img-input hidden">
+                    <img class="modal-img" src="" alt="Edit Image">
+                </label>
+                <button class="save-btn">Save</button>
+            </div>
+        </div>
     </div>
 
     <script src="./js/main.js"></script>
